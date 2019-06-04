@@ -5,7 +5,7 @@ endpoints {
       local-endpoint (FindPoll.js)
     }
     action-endpoint (FetchPollDetails) {
-      accepted-inputs (name)
+      accepted-inputs (name, $vivContext)
       local-endpoint (FetchPollDetails.js)
     }
   }

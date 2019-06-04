@@ -7,5 +7,13 @@ action (FindPoll) {
       min (Optional) max (One)
     }
   }
-  output (Name)
+  output (Name) {
+    throws {
+      error (user-has-not-voted) {
+        on-catch {
+          halt { dialog { template ("can't view this poll because you haven't voted") } }
+        }
+      }
+    } 
+  }
 }
