@@ -8,5 +8,9 @@ endpoints {
       accepted-inputs (name, $vivContext)
       local-endpoint (FetchPollDetails.js)
     }
+    action-endpoint (RecordVote) {
+      accepted-inputs (poll, option, $vivContext)
+      local-endpoint (RecordVote.js)
+    }
   }
 }

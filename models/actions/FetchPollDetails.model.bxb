@@ -7,5 +7,21 @@ action (FetchPollDetails) {
       min (Optional) max (One)
     }
   }
-  output (Poll)
+  output (Poll) {
+    throws {
+      error (user-has-not-voted) {
+        property (poll) {
+          type(Poll) min(Required) max(One)
+        }
+        on-catch {
+          replan {
+            intent {
+              goal: RecordVote
+              value: $expr(poll)
+            }
+          }
+        }
+      }
+    }
+  }
 }

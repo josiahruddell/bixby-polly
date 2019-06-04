@@ -1,0 +1,15 @@
+result-view {
+  match: Poll(this)
+  
+  message { template ("#{value(this.name)}") }
+
+  render {
+    list-of (this.options) {
+      where-each (item) {
+        layout-macro (option-result-macro) {
+          param (option) { expression (item) }
+        }
+      }
+    }
+  }
+}

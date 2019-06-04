@@ -1,0 +1,19 @@
+action (RecordVote) {
+  type (Search)
+  description (__DESCRIPTION__)
+  collect {
+    input (poll) {
+      type (Poll)
+      min (Required) max (One)
+    }
+    
+    input (option) {
+      type (Option) 
+      min (Required) max(One)
+      default-init {
+        intent { goal: Option value: $expr(poll.options) }
+      }
+    }
+  }
+  output (Poll)
+}

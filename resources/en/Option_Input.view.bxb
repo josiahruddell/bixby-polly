@@ -1,0 +1,19 @@
+input-view {
+  match: Option(this) {
+    to-input:   RecordVote(recordVote) {
+        from-input: Poll(poll)
+      }
+  }
+  
+  message { template ("#{value(poll.name)}") }
+
+  render {
+    selection-of (this) {
+      where-each (item) {
+        layout-macro (option-input-macro) {
+          param (option) { expression (item) }
+        }
+      }
+    }
+  }
+}
