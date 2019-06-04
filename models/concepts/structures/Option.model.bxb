@@ -1,6 +1,6 @@
 structure (Option) {
   description (Poll object)
-
+  
   property (votes) {
     type (NumVotes)
     min (Required) max (One)

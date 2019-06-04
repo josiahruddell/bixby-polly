@@ -1,10 +1,16 @@
 structure (Poll) {
   description (Poll object)
+  
   property (name) {
     type (Name)
     min (Required) max (One)
   }
 
+  property (choices) {
+    type (Choices)
+    min (Required) max (Many)
+  }
+  
   property (options) {
     type (Option)
     min (Required) max (Many)
