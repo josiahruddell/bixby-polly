@@ -1,0 +1,11 @@
+action (FetchPollDetails) {
+  type(Fetch)
+  description (Fetches the poll details and stats given an exact poll name)
+  collect {
+    input (name) {
+      type (Name)
+      min (Optional) max (One)
+    }
+  }
+  output (Poll)
+}

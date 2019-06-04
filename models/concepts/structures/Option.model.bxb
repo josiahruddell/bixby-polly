@@ -1,0 +1,28 @@
+structure (Option) {
+  description (Poll object)
+
+  property (votes) {
+    type (NumVotes)
+    min (Required) max (One)
+  }
+
+  property (text) {
+    type (OptionText)
+    min (Required) max (One)
+  }
+
+  property (users) {
+    type (Username)
+    min (Optional) max (Many)
+  }
+
+  property (rank) {
+    type (RankPosition)
+    min (Required) max (One)
+  }
+
+  property (ratio) {
+    type (Ratio)
+    min (Required) max (One)
+  }
+}

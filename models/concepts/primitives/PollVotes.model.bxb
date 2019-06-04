@@ -1,0 +1,3 @@
+integer (PollVotes) {
+  description (__DESCRIPTION__)
+}

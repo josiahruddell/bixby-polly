@@ -1,0 +1,17 @@
+structure (Poll) {
+  description (Poll object)
+  property (name) {
+    type (Name)
+    min (Required) max (One)
+  }
+
+  property (options) {
+    type (Option)
+    min (Required) max (Many)
+  }
+
+  property (totalVotes) {
+    type (PollVotes)
+    min (Required) max (One)
+  }
+}

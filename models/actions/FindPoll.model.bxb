@@ -1,0 +1,11 @@
+action (FindPoll) {
+  type(Fetch)
+  description (Disambiguates a single poll from a fuzzy query)
+  collect {
+    input (search) {
+      type (SearchText)
+      min (Optional) max (One)
+    }
+  }
+  output (Name)
+}

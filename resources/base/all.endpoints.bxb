@@ -1,0 +1,12 @@
+endpoints {
+  action-endpoints {
+    action-endpoint (FindPoll) {
+      accepted-inputs (search)
+      local-endpoint (FindPoll.js)
+    }
+    action-endpoint (FetchPollDetails) {
+      accepted-inputs (name)
+      local-endpoint (FetchPollDetails.js)
+    }
+  }
+}
