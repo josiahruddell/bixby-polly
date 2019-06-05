@@ -10,8 +10,13 @@ layout-macro-def(option-result-macro) {
   content {
     title-card: title-area {
       slot1: text("#{value(option.text)}")
-      slot2 {
-          single-line: text("#{value(option.ratio)}")
+      slot2: single-line: text {
+          value ("Percent: #{value(option.ratio)}%")
+          style (Detail_L_Soft)
+        }
+      slot3: single-line: text {
+          value ("Votes: #{value(option.votes)}")
+          style (Detail_L_Soft)
         }
     }
   }

@@ -1,6 +1,11 @@
 structure (Poll) {
   description (Poll object)
   
+  property (id) {
+    type (Id)
+    min (Required) max (One)
+  }
+
   property (name) {
     type (Name)
     min (Required) max (One)
@@ -18,6 +23,11 @@ structure (Poll) {
 
   property (totalVotes) {
     type (PollVotes)
+    min (Required) max (One)
+  }
+  
+  property (hasVoted) {
+    type (HasVoted)
     min (Required) max (One)
   }
 }

@@ -1,12 +1,13 @@
 action (FetchPollDetails) {
-  type(Fetch)
+  type(Search)
   description (Fetches the poll details and stats given an exact poll name)
   collect {
     input (name) {
       type (Name)
-      min (Optional) max (One)
+      min (Required) max (One)
     }
   }
+  
   output (Poll) {
     throws {
       error (user-has-not-voted) {

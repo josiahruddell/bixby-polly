@@ -5,7 +5,7 @@ input-view {
       }
   }
   
-  message { template ("#{value(poll.name)}") }
+  message { template ("Cast your vote for '#{value(poll.name)}'") }
 
   render {
     selection-of (this) {

@@ -1,0 +1,23 @@
+input-view {
+  match: SearchText(this)
+
+  message { template ("What poll are you looking for?") }
+
+  render {
+    form {
+      elements {
+        text-input {
+          label(Poll Name)
+          id (searchText)
+          type (SearchText)
+          max-length (50)
+          value ("#{raw(this)}")
+        }
+      }
+      on-submit {
+        goal: SearchText
+        value: SearchText(searchText)
+      }
+    }
+  }
+}

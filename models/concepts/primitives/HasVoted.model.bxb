@@ -1,0 +1,3 @@
+boolean (HasVoted) {
+  description (__DESCRIPTION__)
+}

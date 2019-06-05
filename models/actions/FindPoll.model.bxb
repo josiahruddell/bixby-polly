@@ -4,14 +4,20 @@ action (FindPoll) {
   collect {
     input (search) {
       type (SearchText)
-      min (Optional) max (One)
+      plan-behavior (Always)
+      min (Required) max (One)
+      validate {
+        if (!exists(search)) {
+          prompt
+        }
+      }
     }
   }
   output (Name) {
     throws {
-      error (user-has-not-voted) {
+      error (not-found) {
         on-catch {
-          halt { dialog { template ("can't view this poll because you haven't voted") } }
+          halt { dialog { template ("can't find poll a poll for that search term") } }
         }
       }
     }

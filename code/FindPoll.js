@@ -1,6 +1,19 @@
+var http = require('http')
+
 function FindPoll(search) {
   // todo: fuzzy search poll names ${search}
-  return ['What is the name of the song that gets stuck in your head from The Lego Movie?']
+    const url = 'https://2d93obdbg1.execute-api.us-west-1.amazonaws.com/v1/polls/find'
+
+  const response = http.postUrl(
+    url,
+    JSON.stringify({
+      name: search,
+    })
+  )
+
+  const responseJSON = JSON.parse(response)
+  // todo validate
+  return responseJSON.body.map(x => x.poll_name)
 }
 
 module.exports.function = FindPoll

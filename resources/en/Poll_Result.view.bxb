@@ -3,6 +3,17 @@ result-view {
   
   message { template ("#{value(this.name)}") }
 
+  // refresh {
+  //   spec {
+  //     delay-seconds (20)
+  //     with-request {
+  //       intent {
+  //         goal: Poll
+  //         value: SearchText($expr(this.id))}
+  //       }
+  //     }
+  //   }
+  // }
   render {
     list-of (this.options) {
       where-each (item) {
